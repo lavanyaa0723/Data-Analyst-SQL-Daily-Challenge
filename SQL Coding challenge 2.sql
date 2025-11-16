@@ -1,6 +1,10 @@
+-- SQL Coding Challenge Day -2 --
+-- Constrains --
+
 CREATE DATABASE onlinebookstore;
 USE onlinebookstore;
 
+-- Primary Key, Foreign Key --
 CREATE TABLE books(
 book_id int primary key,
 title varchar(50),
@@ -16,8 +20,11 @@ quantity int,
 book_id int,
 foreign key(book_id) references books(book_id)
 );
+
+-- Unique Constrain --
  ALTER TABLE books ADD ISBN varchar(15) unique;
- 
+
+-- Delete and Truncate --
  DELETE from orders where order_id <50;
  
  TRUNCATE TABLE orders;
